@@ -14,6 +14,8 @@ provider:
   region: us-east-2
   apiGateway:
     shouldStartNameWithService: true
+plugins:
+  - serverless-offline
 
 functions:
   hello:
@@ -22,5 +24,12 @@ functions:
     handler: handler.helloUser  # La función handler.helloUser indica que será un archivo handler.js en la carpeta raíz del proyecto
     events:
       - http:
-          method: get
+          method: GET
           path: user/{name}
+  createUser:
+    handler: handler.createUser  # La función handler.helloUser indica que será un archivo handler.js en la carpeta raíz del proyecto
+    events:
+      - http:
+          method: POST
+          path: user      
+          

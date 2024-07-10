@@ -1,6 +1,10 @@
 // handler.js
 
 // Ejemplo de función "hello" para Serverless Framework
+
+'use strict';
+const querystring = require("querystring")
+
 const hello = async (event) => {
     return {
         statusCode: 200,
@@ -28,12 +32,24 @@ module.exports = {
 //     };
 // };
 module.exports.helloUser = async (event) => {
-    const name = event.pathParameters.name; // Capturar el valor de `name` desde la ruta
+   const name = event.pathParameters.name; // Capturar el valor de `name` desde la ruta
     return {
         statusCode: 200,
         body: JSON.stringify({
-            message: `Hola ${event.pathParameters.name}`,
+            message: `Hola usuario aaron ${name}`,
             input: event,
-        }),
+        }, null, 2),
+    };
+};
+
+
+module.exports.createUser = async (event) => {
+    const body = querystring.parse(event["body"])
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            message: "Peticion para crear usuarios",
+            input: `Hola ${body.user}`,
+        }, null, 2),
     };
 };
