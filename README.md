@@ -1,0 +1,2 @@
+# aws
+serverless con aws
