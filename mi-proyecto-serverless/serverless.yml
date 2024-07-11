@@ -12,6 +12,7 @@ provider:
   runtime: nodejs20.x  # Versión de Node.js que deseas utilizar
   lambdaHashingVersion: 20201221
   region: us-east-2
+  profile: serverless
   apiGateway:
     shouldStartNameWithService: true
 plugins:
