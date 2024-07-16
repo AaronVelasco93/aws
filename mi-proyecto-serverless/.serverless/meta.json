@@ -1,0 +1,92 @@
+{
+  "C:\\Users\\aaron\\Escritorio\\aws\\mi-proyecto-serverless": {
+    "versionSfCore": null,
+    "versionFramework": "4.1.12",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\aaron\\Escritorio\\aws\\mi-proyecto-serverless",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "huronmarron",
+      "app": "miapp",
+      "service": "my-service",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "lambdaHashingVersion": 20201221,
+        "region": "us-east-2",
+        "profile": "serverless",
+        "apiGateway": {
+          "shouldStartNameWithService": true
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "hello": {
+          "handler": "handler.hello"
+        },
+        "helloUser": {
+          "handler": "handler.helloUser",
+          "events": [
+            {
+              "http": {
+                "method": "GET",
+                "path": "user/{name}"
+              }
+            }
+          ]
+        },
+        "createUser": {
+          "handler": "handler.createUser",
+          "events": [
+            {
+              "http": {
+                "method": "POST",
+                "path": "user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\r\norg: huronmarron\r\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\r\napp: miapp\r\n# serverless.yml\r\n# serverless.yml\r\n\r\nservice: my-service  # Nombre de tu servicio\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs20.x  # Versión de Node.js que deseas utilizar\r\n  lambdaHashingVersion: 20201221\r\n  region: us-east-2\r\n  profile: serverless\r\n  apiGateway:\r\n    shouldStartNameWithService: true\r\nplugins:\r\n  - serverless-offline\r\n\r\nfunctions:\r\n  hello:\r\n    handler: handler.hello  # La función handler.hello indica que será un archivo handler.js en la carpeta raíz del proyecto\r\n  helloUser:\r\n    handler: handler.helloUser  # La función handler.helloUser indica que será un archivo handler.js en la carpeta raíz del proyecto\r\n    events:\r\n      - http:\r\n          method: GET\r\n          path: user/{name}\r\n  createUser:\r\n    handler: handler.createUser  # La función handler.helloUser indica que será un archivo handler.js en la carpeta raíz del proyecto\r\n    events:\r\n      - http:\r\n          method: POST\r\n          path: user      \r\n          ",
+    "command": [
+      "remove"
+    ],
+    "options": {},
+    "error": {
+      "message": "AWS credentials missing or invalid. Run \"serverless\" to set up AWS credentials, or learn more in our docs: http://slss.io/aws-creds-setup. Original error from AWS: Could not load credentials from any providers",
+      "code": "AWS_CREDENTIALS_MISSING"
+    },
+    "machineId": "e2965bebfe8382b90de4c16aaec708ee",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "041f84d7-487d-49f9-a55e-0ccdd3c1f24b",
+    "orgName": "huronmarron",
+    "userId": "zGrCZpNHbVxPbC8KZ9",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": false,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "cXXf9HPVDF4Zw7lMGq",
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "huronmarron",
+    "subscription": null,
+    "userEmail": "aaronvelascobachilleres@gmail.com",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
