@@ -14,12 +14,15 @@ console.log(Secondtext)
 */
 //LECTURA DE ARCHIVOS ASINCRONOS (promesas)
 const fs = require('node:fs')
+// const {promisify} = require('node:util')
+// const readFilePromise = promisify(fs.readFile) 
 
 console.log('Leyendo el primer archivo ...')
 
-fs.readFile('./archivo.txt','utf-8',(err, text)=>{
-    console.log(text)
-})
+fs.readFilePromise('./archivo.txt','utf-8')
+    .then(text=>{
+        console.log('Primer texto',text)
+    })
 
 console.log('Haciendo cosas mientras lee el archivo')
 
