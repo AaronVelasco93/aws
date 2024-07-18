@@ -19,3 +19,9 @@ https://developer.shiphero.com/graphql-primer/
 Atlas
 aaronvelascovea
 x3p0TaX7S8qbFXke
+
+graft ql 
+mongo 
+conexion
+
+crud
