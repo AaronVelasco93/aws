@@ -1,20 +1,13 @@
 const {ApolloServer, gql}= require ('apollo-server');
-const connectDB = require('./db');
-const {Book,Author} =require('./models');
-
-//coneccion con la base de datos
-connectDB();
 
 //Definir los esquemas
 const typeDefs = gql`
      type Book{
-        id:ID!
         title: String
         author: String
         anioPublicado:Int
      }
     type Author{
-        id:ID!
         name:String
         books:[Book]
     }
@@ -31,6 +24,7 @@ const typeDefs = gql`
     type Mutation{
         addBook(title:String!, author:String!,anioPublicado:Int!):Book
     }
+    
 
 `;
 //Datos de Ejemplo
@@ -63,25 +57,23 @@ const authors =[
 const resolvers={
     Query:{
         hello:()=> 'hola mundo',
-        books:async ()=>await Book.find(),
-        bookByTitle:async (_,{title})=> await Book.findOne({title}),
-        bookByAuthor: async (_,{author})=> await Book.find({author}),
-        authors:()=> async() => await Author.find().populate('books'),
+        books:()=>books,
+        bookByTitle:(_,{title})=>books.find(book=>book.title===title),
+        bookByAuthor:(_,{author})=>books.filter(book=>book.author===author),
+        authors:()=>authors,
     },
     Mutation:{
-        addBook:async (_,{title,author,anioPublicado})=>{
-            let book = new Book({title,author,anioPublicado});
-            await book.save();
-
+        addBook:(_,{title,author,anioPublicado})=>{
+            const newBook ={title, author,anioPublicado};
+            books.push(newBook);
             //Logica para agregar autores
-            let authorObj= await Author({name:author,books:[]});
+            let authorObj=authors.find(a=> a.name === author);
             if(!authorObj){
-               authorObj = new Author({name:author,books:[]});
+                authorObj={name:author,books:[]};
+                authors.push(authorObj);
             }
-            authorObj.books.push(book);
-            await authorObj.save();
-
-            return book;
+            authorObj.books.push(newBook);
+            return newBook;
         },
     },
 };
