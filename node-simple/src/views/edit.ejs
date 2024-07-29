@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Usuario</title>
+</head>
+<body>
+  <h1>Editar Usuario</h1>
+  <form action="/edit/<%= user._id %>" method="POST">
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" id="name" value="<%= user.name %>" required>
+    <label for="age">Edad:</label>
+    <input type="number" name="age" id="age" value="<%= user.age %>" required>
+    <button type="submit">Actualizar</button>
+  </form>
+</body>
+</html>
