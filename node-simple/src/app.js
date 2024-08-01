@@ -4,7 +4,7 @@ const userRoutes = require('./routes/userRoutes');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3005;
 
 // Conectar a la base de datos
 connectDB();

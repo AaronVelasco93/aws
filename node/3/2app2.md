@@ -1,0 +1,1 @@
+En este ejemplo, la función hacerOperacionAsincrona retorna una promesa que simula una operación asíncrona. Dependiendo de un valor aleatorio, la promesa se resuelve o se rechaza, y luego manejamos esos casos usando .then() y .catch().

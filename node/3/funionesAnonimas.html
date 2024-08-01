@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Función Anónima</title>
+</head>
+<body>
+
+    <h1>Ejemplo de Función Anónima con JavaScript</h1>
+    <button id="miBoton">Haz clic aquí</button>
+
+    <script>
+        // Seleccionamos el botón del DOM
+        const boton = document.getElementById('miBoton');
+
+        // Agregamos un evento de clic al botón usando una función anónima
+        boton.addEventListener('click', function() {
+            console.log('¡El botón ha sido clicado!');
+            alert('¡Hola! Has hecho clic en el botón.'); // Muestra una alerta en pantalla
+        });
+    </script>
+    
+</body>
+</html>
