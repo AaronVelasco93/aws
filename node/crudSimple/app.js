@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+// analizar los datos del cuerpo de las solicitudes HTTP, específicamente los datos que provienen de formularios HTML enviados a través de la propiedad POST
 
 // Configuramos el motor de plantillas
 app.set('view engine', 'ejs');
