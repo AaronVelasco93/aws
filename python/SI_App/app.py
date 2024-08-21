@@ -8,7 +8,8 @@ def guardar_dato(dato):
             host='localhost',
             user='root',  # Reemplaza con tu usuario de MySQL
             password='123456',  # Reemplaza con tu contraseña de MySQL
-            database='mi_base_datos'  # Reemplaza con tu base de datos
+            database='mi_base_datos',
+            port=3306  # Reemplaza con tu base de datos
         )
 
         if conexion.is_connected():
