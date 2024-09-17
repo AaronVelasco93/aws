@@ -4,7 +4,7 @@ const express = require('express');
 //creamos una instancia de una aplicacion de Express
 const app = express();
 // Definimos el puerto en que se sejecutara el servidor
-const PORT = process.env.PORT||3005;
+const PORT = process.env.PORT||3009;
 
 
 /*Milddleware para servir archivos estaticos desde la carpeta public
