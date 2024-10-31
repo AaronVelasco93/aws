@@ -1,8 +1,11 @@
 /*
 //Con callback (llamdas)
-const fs = require('node:fs');
-
-fs.readdir('.',(err,files)=>{
+/* Importa el módulo fs (file system) que permite interactuar con el sistema de archivos.
+ Este módulo proporciona funciones para trabajar con archivos y directorios (crear, leer, escribir, etc.).*/
+//const fs = require('node:fs');
+//Esta es una función del módulo fs que lee el contenido de un directorio.
+/*
+fs.readdir('.',(err,files)=>{ 
      if(err){
          console.error('Error en el directorio:',err)
          return;
@@ -13,21 +16,20 @@ fs.readdir('.',(err,files)=>{
  
 })
 */
-//APLICACION CON PROMESAS
+
 
 const fs = require('node:fs/promises');
-
 fs.readdir('.')
-.then(files =>{
-    files.forEach(file =>{
-        console.log(file)
-     })
+    .then(files => {
+        files.forEach(file => {
+            console.log(file)
+        })
     })
-.catch(err => {
-    if(err){
-        console.error('Error en el directorio:',err)
-        return;
-    }
-    })
+    .catch(err => {
+        if (err) {
+            console.error('Error en el directorio:', err)
+            return;
+        }
+    });
 
 

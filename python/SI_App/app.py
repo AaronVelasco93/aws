@@ -1,6 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
-
+# pip install mysql-connector-python
 def guardar_dato(dato):
     try:
         # Conectar a la base de datos MySQL

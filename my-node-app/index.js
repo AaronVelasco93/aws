@@ -2,7 +2,7 @@ const express = require('express'); //Importacion del modulo de express
 const app = express(); // Crea una instancia de un aplicacion de express
 const PORT =3000;//Definimos el puerto que vamos a ocupar
 
-const routes = require('./routes');//imoprta las rutas definidas
+const routes = require('./routes');//importa las rutas definidas
 
 //Middleware
 //El Milddleware es una funcion que se ejecuta durante el ciclo de vida de una solicitud del servidor

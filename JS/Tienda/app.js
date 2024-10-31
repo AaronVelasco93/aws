@@ -64,3 +64,5 @@ do {
 } while (opcion !== productos.length + 2); // El bucle continúa hasta que elige "Salir"
 
 console.log("Gracias por visitar la tienda.");
+
+
