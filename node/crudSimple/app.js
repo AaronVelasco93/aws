@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+
 /*
 Middleware para procesar datos enviados en el cuerpo de la solicitud, particularmente útil para manejar 
 datos enviados desde formularios HTML.
