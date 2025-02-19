@@ -124,4 +124,4 @@ app.get('/delete/:id', (req, res) => {
     });
 });
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
